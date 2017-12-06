@@ -24,3 +24,48 @@
 5. Added lint. Cmd to check: npm run lint
 
 6. Added test. Cmd to run: npm test
+
+7. ES6, the difference from ES5
+    - No autobind
+        * binding directly for compoment
+            <div onClick={this.handleClick.bind(this)}</div>
+        
+        * binding with using the constructor
+            constructor(props){
+                super(props);
+                this.handleClick = this.handleClick.bind(this);
+            }
+
+    - PropTypes declared separately
+    - Default props declared separately
+    - Set initial state in constructor
+    - Recommended use "const" instead of "var"
+        const HelloWorld = (props) => {
+            return (
+                <h1> Hello World</h1>
+            );
+        };
+    - Stateless component usage.
+
+7. Container and Presentation react components.
+    - Container:
+        * Little to no markup
+        * Pass data and actions down
+        * Knows about Redux
+        * Often stateful
+            or in jargon
+        * Smart
+        * Stateful
+        * Controller View
+
+    - Presentation:
+        * Nearly all markup
+        * Receive data and actions via props
+        * Doesn`t know about Redux
+        *  Typically functional components
+            or in jargon
+        * Dumb
+        * Stateless
+        * View
+
+    
