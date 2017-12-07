@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 // import { bindActionCreators } from 'redux';
 // import {connect} from 'react-redux';
 // import {browserHistory} from 'react-router';
@@ -6,10 +6,43 @@ import React, {PropTypes} from 'react';
 // import CourseList from './CourseList';
 
 class CoursesPage extends React.Component {
-  render(){
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      course: { title: "" }
+    };
+
+    this.onTitleChange = this.onTitleChange.bind(this);
+    this.onClickSave = this.onClickSave.bind(this);
+
+  }
+
+  onTitleChange(event) {
+    debugger
+    const course = this.state.course;
+    course.title = event.target.value;
+    this.setState({course: course});
+  }
+
+  onClickSave(){
+    debugger
+    alert(`Saving ${this.state.course.title}`);
+  }
+
+  render() {
     return (
       <div>
         <h1>Courses</h1>
+        <h2>Add Course</h2>
+        <input
+          type="text"
+          onChange={this.onTitleChange}
+          value={this.state.course.title} />
+        
+        <input
+          type="submit"
+          value="Save"
+          onClick={this.onClickSave} />
       </div>
     );
   }
