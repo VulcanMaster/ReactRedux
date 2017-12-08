@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 // import {browserHistory} from 'react-router';
 import * as courseActions from '../../actions/courseActions';
-import { createCourse } from '../../actions/courseActions';
+// import { createCourse } from '../../actions/courseActions';
 // import CourseList from './CourseList';
 
 class CoursesPage extends React.Component {
@@ -25,7 +25,7 @@ class CoursesPage extends React.Component {
   }
 
   onClickSave() {
-    this.props.createCourse(this.state.course); // mapDispatchToProps does the dispatch
+    this.props.actions.createCourse(this.state.course); // mapDispatchToProps does the dispatch
   }
 
   courseRow(course, index) {
@@ -53,9 +53,10 @@ class CoursesPage extends React.Component {
 }
 
 CoursesPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  // dispatch: PropTypes.func.isRequired,
   courses: PropTypes.array.isRequired,
-  createCourse: propTypes.func.isRequired
+  actions: PropTypes.object.isRequired
+  // createCourse: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
@@ -66,8 +67,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    createCourse: course => dispatch(courseActions.createCourse(course))
-    // actions: bindActionCreators(courseActions, dispatch)
+    // createCourse: course => dispatch(courseActions.createCourse(course)) // replaced with "bindActionCreators"
+    actions: bindActionCreators(courseActions, dispatch) // this go through all actions in courseActions and bind every action to dispatch
   };
 }
 
