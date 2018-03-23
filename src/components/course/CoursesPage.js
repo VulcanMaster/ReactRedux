@@ -25,6 +25,7 @@ class CoursesPage extends React.Component {
   }
 
   onClickSave() {
+    debugger
     this.props.actions.createCourse(this.state.course); // mapDispatchToProps does the dispatch
   }
 

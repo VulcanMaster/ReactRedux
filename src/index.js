@@ -9,6 +9,9 @@ import './styles/styles.css'; //Webpack can import CSS files too!
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const store = configureStore();
+store.subscribe(()=>{
+  console.log("store has changed");
+})
 
 render(
   <Provider store={store}>
