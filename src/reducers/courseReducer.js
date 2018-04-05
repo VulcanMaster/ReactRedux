@@ -4,9 +4,13 @@ export default function courseReducer(state = [], action) {
     switch(action.type){
         case types.CREATE_COURSE: 
             debugger
+            
+            // two line
             //state.push(action.course);
             // return state;
-            return [...state, 
+
+
+            return [...state,  // ... is the spread operatior
                 Object.assign({}, action.course)
             ];
 
