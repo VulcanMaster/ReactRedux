@@ -1,18 +1,21 @@
-import * as types from '../actions/actionTypes';
+import * as types from './../actions/actionTypes';
 
 export default function courseReducer(state = [], action) {    
     switch(action.type){
-        case types.CREATE_COURSE: 
+        case types.LOAD_COURSES_SUCCESS: {
             debugger
-            
-            // two line
+           return action.courses;
+        }
+        
+        case types.CREATE_COURSE:  {
+            debugger
+            // two line not suitable for use, because of state imutability
             //state.push(action.course);
             // return state;
-
-
             return [...state,  // ... is the spread operatior
                 Object.assign({}, action.course)
             ];
+        }
 
         default:
          return state;
