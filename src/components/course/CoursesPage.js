@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 // import {browserHistory} from 'react-router';
 import * as courseActions from '../../actions/courseActions';
 // import { createCourse } from '../../actions/courseActions';
-// import CourseList from './CourseList';
+import CourseList from './CourseList';
 
 class CoursesPage extends React.Component {
   constructor(props, context) {
@@ -34,10 +34,14 @@ class CoursesPage extends React.Component {
   }
 
   render() {
+    // const courses  =  this.props.couses;
+    const { courses } =  this.props; // the same as line above, but could be used in <CourseList courses = {courses} />  without use long syntax this.props.courses
+
     return (
       <div>
         <h1>Courses</h1>
-        {this.props.courses.map(this.courseRow)}
+        {/* {this.props.courses.map(this.courseRow)} */}
+        <CourseList courses = {courses} /> 
         <h2>Add Course</h2>
         <input
           type="text"
