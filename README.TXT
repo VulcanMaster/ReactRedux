@@ -203,3 +203,9 @@
 
     cmd: npm run test: watch
     npm test
+
+18. Testing Redux.
+    1. Test markup.
+    2. Testing container components.
+        - Wrap with <Provider>
+        - Add named export for unconnected component
