@@ -23,7 +23,6 @@ export default function courseReducer(state = initialState.courses, action) {
         //     // two line not suitable for use, because of state imutability
         //     //state.push(action.course);
         //     // return state;
-        //     debugger
         //     return [...state,  // ... is the spread operatior
         //     Object.assign({}, action.course)
         //     ];
