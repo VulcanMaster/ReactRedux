@@ -3,7 +3,6 @@ import courseApi from './../api/mockCourseApi'
 
 export function createCourse(course) 
 { 
-  debugger
   return {type: types.CREATE_COURSE, 
           course};
 }
@@ -17,7 +16,6 @@ export function loadCourses() {
       return courseApi.getAllCourses().then(courses => {
         dispatch(loadCoursesSuccess(courses))
       }).catch(error=>{
-        debugger
         throw(error);
       })
   };
