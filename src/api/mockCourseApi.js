@@ -67,8 +67,9 @@ class CourseApi {
   static saveCourse(course) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
+        debugger
         // Simulate server-side validation
-        const minCourseTitleLength = 1;
+        const minCourseTitleLength = 3;
         if (course.title.length < minCourseTitleLength) {
           reject(`Title must be at least ${minCourseTitleLength} characters.`);
         }
