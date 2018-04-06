@@ -20,12 +20,12 @@ export class ManageCoursePage extends React.Component {
         this.updateCourseState = this.updateCourseState.bind(this);
     }
 
-    //   componentWillReceiveProps(nextProps) {
-    //     if (this.props.course.id != nextProps.course.id) {
-    //       // Necessary to populate form when existing course is loaded directly.
-    //       this.setState({course: Object.assign({}, nextProps.course)});
-    //     }
-    //   }
+      componentWillReceiveProps(nextProps) {
+        if (this.props.course.id != nextProps.course.id) {
+          // Necessary to populate form when existing course is loaded directly.
+          this.setState({course: Object.assign({}, nextProps.course)});
+        }
+      }
 
       updateCourseState(event) {
         const field = event.target.name;
@@ -125,19 +125,6 @@ function mapStateToProps(state, ownProps) {
         course: course,
         authors: authorsFormattedForDropdown
     }
-
-    //   const courseId = ownProps.params.id; // from the path `/course/:id`
-
-    //   let course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};
-
-    //   if (courseId && state.courses.length > 0) {
-    //     course = getCourseById(state.courses, courseId);
-    //   }
-
-    //   return {
-    //     course: course,
-    //     authors: authorsFormattedForDropdown(state.authors)
-    //   };
 }
 
 function mapDispatchToProps(dispatch) {
