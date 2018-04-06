@@ -17,7 +17,7 @@ export class ManageCoursePage extends React.Component {
         };
 
         // this.saveCourse = this.saveCourse.bind(this);
-        // this.updateCourseState = this.updateCourseState.bind(this);
+        this.updateCourseState = this.updateCourseState.bind(this);
     }
 
     //   componentWillReceiveProps(nextProps) {
@@ -27,12 +27,13 @@ export class ManageCoursePage extends React.Component {
     //     }
     //   }
 
-    //   updateCourseState(event) {
-    //     const field = event.target.name;
-    //     let course = Object.assign({}, this.state.course);
-    //     course[field] = event.target.value;
-    //     return this.setState({course: course});
-    //   }
+      updateCourseState(event) {
+        debugger
+        const field = event.target.name;
+        let course = Object.assign({}, this.state.course);
+        course[field] = event.target.value;
+        return this.setState({course: course});
+      }
 
     //   courseFormIsValid() {
     //     let formIsValid = true;
@@ -74,7 +75,7 @@ export class ManageCoursePage extends React.Component {
                 <CourseForm
                 allAuthors={this.props.authors}
                 course={this.state.course}
-                // onChange={this.updateCourseState}
+                onChange={this.updateCourseState}
                 // onSave={this.saveCourse}
                 errors={this.state.errors}
                 // allAuthors={this.props.authors}
