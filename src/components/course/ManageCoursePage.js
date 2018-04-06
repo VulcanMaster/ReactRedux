@@ -16,7 +16,7 @@ export class ManageCoursePage extends React.Component {
             saving: false
         };
 
-        // this.saveCourse = this.saveCourse.bind(this);
+        this.saveCourse = this.saveCourse.bind(this);
         this.updateCourseState = this.updateCourseState.bind(this);
     }
 
@@ -28,7 +28,6 @@ export class ManageCoursePage extends React.Component {
     //   }
 
       updateCourseState(event) {
-        debugger
         const field = event.target.name;
         let course = Object.assign({}, this.state.course);
         course[field] = event.target.value;
@@ -48,12 +47,13 @@ export class ManageCoursePage extends React.Component {
     //     return formIsValid;
     //   }
 
-    //   saveCourse(event) {
-    //     event.preventDefault();
+      saveCourse(event) {
+        event.preventDefault();
+        this.props.actions.saveCourse(this.state.course)
 
-    //     if (!this.courseFormIsValid()) {
-    //       return;
-    //     }
+        // if (!this.courseFormIsValid()) {
+        //   return;
+        // }
 
     //     this.setState({saving: true});
     //     this.props.actions.saveCourse(this.state.course)
@@ -68,7 +68,7 @@ export class ManageCoursePage extends React.Component {
     //     this.setState({saving: false});
     //     toastr.success('Course saved.');
     //     this.context.router.push('/courses');
-    //   }
+      }
 
     render() {
         return (
@@ -76,7 +76,7 @@ export class ManageCoursePage extends React.Component {
                 allAuthors={this.props.authors}
                 course={this.state.course}
                 onChange={this.updateCourseState}
-                // onSave={this.saveCourse}
+                onSave={this.saveCourse}
                 errors={this.state.errors}
                 // allAuthors={this.props.authors}
                 // saving={this.state.saving}
@@ -87,8 +87,8 @@ export class ManageCoursePage extends React.Component {
 
 ManageCoursePage.propTypes = {
   course: PropTypes.object.isRequired,
-  authors: PropTypes.array.isRequired
-//   actions: PropTypes.object.isRequired
+  authors: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired
 };
 
 //Pull in the React Router context so router is available on this.context.router.
