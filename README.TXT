@@ -175,5 +175,31 @@
     - React-Redux: Woah, thanks for the new data Mr.Store. I`ll now intelligently determine if I should tell React about this change so that it onlu has bother with updating the UI when necessary;
     - React: Ooo! Shiny new data has been passed down via props from the store! I`ll update the UI to reflect this!
 
+15. Mocha - testing framework in this tutorial.
 
+16. Expect - the assert in the testing.
 
+17. React Test Utils
+    JSDOM (In-memory DOM)
+    Cheerio (Fast jQuery style selectors)
+
+    https://reactjs.org/docs/test-utils.html
+
+        Simulate
+        renderIntoDocument()
+        mockComponent()
+        isElement()
+        isElementOfType()
+        isDOMComponent()
+        isCompositeComponent()
+        isCompositeComponentWithType()
+        findAllInRenderedTree()
+        scryRenderedDOMComponentsWithClass()
+        findRenderedDOMComponentWithClass()
+        scryRenderedDOMComponentsWithTag()
+        findRenderedDOMComponentWithTag()
+        scryRenderedComponentsWithType()
+        findRenderedComponentWithType()
+
+    cmd: npm run test: watch
+    npm test
