@@ -223,3 +223,6 @@
     8) Pagination;
     9) Sort courses table;
     10) Revert abandoned changes;
+
+21. npm install --save-dev redux-devtools-extension
+      this cmdlet should be runned to install the missing redux development tools
