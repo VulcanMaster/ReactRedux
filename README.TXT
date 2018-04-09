@@ -209,3 +209,5 @@
     2. Testing container components.
         - Wrap with <Provider>
         - Add named export for unconnected component
+
+19.
