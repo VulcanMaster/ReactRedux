@@ -210,4 +210,16 @@
         - Wrap with <Provider>
         - Add named export for unconnected component
 
-19.
+19. Added production deployment opportunity.
+
+20. Challenge list:
+    1) Author administration;
+    2) Delete course;
+    3) Hide empty course list;
+    4) Unsave changed message;
+    5) Client-side validation;
+    6) Handle 404`s ;
+    7) Show # courses in Header;
+    8) Pagination;
+    9) Sort courses table;
+    10) Revert abandoned changes;
